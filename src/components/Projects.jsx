@@ -1,130 +1,110 @@
 import React from "react";
-import vpn from "../assets/vpn.png";
-import aave from "../assets/aave.jpg";
-import intelli_chatbot from "../assets/intelli_chatbot.png";
-import medicine_ui from "../assets/medicine-ui.png";
+import { motion } from "framer-motion";
 import Footer from "./Footer";
+import { project } from "../constants";
 
 const ProjectCard = ({ image, title, description, git, technologies }) => {
   return (
-    <div className="max-w-sm sm:max-w-sm md:max-w-sm bg-gray-900 border border-neutral-100 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      {title === "Intelli ChatBot" && (
-        <a href="#">
-          <img
-            className="w-full rounded-t-lg h-auto object-cover "
-            src={intelli_chatbot}
-            alt=""
-          />
-        </a>
-      )}
-      {title === "Medicine-Service-UI" && (
-        <a href="#">
-          <img
-            className="w-full rounded-t-lg h-auto object-cover "
-            src={medicine_ui}
-            alt=""
-          />
-        </a>
-      )}
-      {title === "AAVE Subgraph" && (
-        <a href="#">
-          <img
-            className="w-full rounded-t-lg h-auto object-cover "
-            src={aave}
-            alt=""
-          />
-        </a>
-      )}
-      <div className="p-4 sm:p-6">
-        <a href="#">
-          <h5 className="text-2xl sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-white bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-500">
-            {title}
-          </h5>
-        </a>
-        <p className="font-normal text-sm sm:text-base md:text-lg text-gray-300 dark:text-gray-400">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-gray-900 border border-gray-700 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+    >
+      <motion.img
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.3 }}
+        className="w-full object-cover"
+        src={image}
+        alt={title}
+      />
+      <div className="p-5 flex-grow flex flex-col">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-white bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-500">
+          {title}
+        </h5>
+        <p className="mb-3 font-normal text-gray-300 flex-grow">
           {description}
         </p>
-      </div>
-      <div className="m-2 sm:m-4 lg:m-6 flex justify-between">
-        <div className="flex flex-wrap gap-2 pl-2">
-          {technologies.map((tag, index) => (
-            <p key={`${index}-${tag}`} className="text-[14px] text-blue-500">
-              #{tag}
-            </p>
+        <div className="flex flex-wrap gap-2 mb-3">
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="px-2 py-1 text-xs font-semibold text-gray-300 bg-gray-800 rounded-full"
+            >
+              {tech}
+            </span>
           ))}
         </div>
-        <a
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           href={git}
-          className="text-red-300 border border-gray-200 rounded-lg shadow p-1 sm:p-2 lg:p-3 hover:text-green-500 duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-yellow-400 to-pink-500 rounded-lg hover:from-yellow-500 hover:to-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300"
         >
-          GitHub
-        </a>
+          View on GitHub
+          <svg
+            className="w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            ></path>
+          </svg>
+        </motion.a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const Projects = () => {
   return (
-    <div className="bg-black">
-      <div className="flex flex-wrap gap-7 justify-center items-center m-12 p-12">
-        {project.map((item, index) => (
-          <ProjectCard
-            key={index}
-            image={item.image}
-            title={item.title}
-            description={item.description}
-            links={item.links}
-            git={item.git}
-            technologies={item.technologies}
-          />
-        ))}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="bg-black min-h-screen py-16"
+    >
+      <div className="container mx-auto px-4">
+        <motion.h2
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-5xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-600"
+        >
+          My Projects
+        </motion.h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {project.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)]"
+            >
+              <ProjectCard
+                image={item.image}
+                title={item.title}
+                description={
+                  "An innovative project showcasing cutting-edge technology and problem-solving skills."
+                }
+                git={item.git}
+                technologies={item.technologies}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
-
-export const project = [
-  {
-    title: "Intelli ChatBot",
-    description:
-      "It is an AI based Data analysis platform in which we leveraged the capabilities of Excel Spreadsheets for better data presentation and Pandas massive computational capacity to accelerate analysis. With just one query, this platform leverages AI to build code, analyze data, and display the results on a spreadsheet.",
-    image: { intelli_chatbot },
-    git: "https://github.com/mukulmeena/IntelliChatbot",
-    technologies: [
-      "Pandas",
-      "ReactJS",
-      "Flask",
-      "openAI",
-      "Python",
-      "Syncfusion",
-    ],
-  },
-  {
-    title: "Medicine-Service-UI",
-    description:
-      "Finding the cheapest medicine from the number of nearby pharmacy. Filter out cheapest medicines on the basis of 3 categories: Form, Strength and Packaging and find the best medicine possible at cheapest price.",
-    image: { medicine_ui },
-    git: "https://github.com/mukulmeena/Medical-Service-UI",
-    technologies: ["React JS", "Javascript"],
-  },
-  //   {
-  //     title: "Iris Species Predictor",
-  //     description:
-  //       "It is a web application which predicts the IRIS species based on its features. The project involved preprocessing the Iris flowers features data i.e. sepal length, sepal width etc. and training the model using Linear Regression algorithm on this data.",
-  //     image: { aave },
-  //     git: "https://github.com/nithingooud/vpn_studios",
-  //     technologies: ["Flask", "Python", "Machine Learning"],
-  //   },
-  {
-    title: "AAVE Subgraph",
-    description:
-      "Aave is a decentralized non-custodial liquidity protocol where users can participate as depositors or borrowers. This Subgraph Basically query the data of Application on Blockchain and GraphQL Node and store the data in Graph Store.",
-    image: { aave },
-    git: "https://github.com/mukulmeena/Subgraph",
-    technologies: ["Typescript", "Web3", "Blockchain"],
-  },
-];
 
 export default Projects;

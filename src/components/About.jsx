@@ -5,7 +5,7 @@ import ButtonLink from "./ButtonLink";
 import Footer from "./Footer";
 
 const ServiceCard = ({ service }) => (
-  <div className="sm:w-[250px] w-full">
+  <div className="sm:w-[250px] w-full h-full">
     <div className="w-full green-pink-gradient p-[1px] rounded-[20px]">
       <div
         className="rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
@@ -28,7 +28,7 @@ const About = () => {
   return (
     <div>
       <div
-        className="bg-black h-full w-full text-white sm:flex sm:justify-around about py-12 mt-8 overflow-x-hidden"
+        className="bg-black h-full w-full text-white sm:flex sm:justify-around about py-12 overflow-x-hidden"
         id="about"
       >
         <div className="flex flex-col justify-around">

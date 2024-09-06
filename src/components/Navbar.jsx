@@ -1,59 +1,92 @@
-import React, { useState ,useEffect} from 'react';
-import { Link,useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
-
   const { pathname } = useLocation();
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
+    setMobileMenuOpen(false);
   }, [pathname]);
 
-  return (
-    <nav className="bg-gray-800 p-4 text-white fixed w-full z-10 top-0" style={{ cursor: 'default' }}>
-      <div className="mx-auto text-center flex w-5/6 justify-between">
-        
-        <div className="hidden sm:flex space-x-4 items-center text-sm">
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
-        </div>
-        <div className="text-3xl sm:text-2xl font-extrabold">
-          <a href="/">Mukul Meena</a>
-        </div>
-        <div className="hidden sm:flex space-x-4 items-center text-sm">
-          <Link to='/projects'>Projects</Link>
-          <Link to='/experience'>Experience</Link>
-          <Link to='/contact'>Contact</Link>
-        </div>
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Experience', path: '/experience' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
-        <div className="sm:hidden">
-          <button onClick={toggleMobileMenu} className="text-xl focus:outline-none">
-            {isMobileMenuOpen ? '✕' : '☰'}
-          </button>
-        </div>
-        <div className={`sm:hidden fixed top-0 left-0 w-full h-full bg-gray-800 text-center ${isMobileMenuOpen ? 'flex flex-col items-center justify-center' : 'hidden'}`}>
-          <button onClick={closeMobileMenu} className="text-xl absolute top-4 right-4 focus:outline-none">
-            ✕
-          </button>
-          <ul className="font-medium text-2xl space-y-4">
-            <li><Link to='/' onClick={closeMobileMenu}>Home</Link></li>
-            <li><Link to='/about' onClick={closeMobileMenu}>About</Link></li>
-            <li><Link to='/projects' onClick={closeMobileMenu}>Projects</Link></li>
-            <li><Link to='/experience' onClick={closeMobileMenu}>Experince</Link></li>
-            <li><Link to='/contact' onClick={closeMobileMenu}>Contact</Link></li>
-          </ul>
+  return (
+    <nav className={`fixed w-full z-20 transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-lg' : 'bg-transparent'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <Link to="/" className="text-2xl font-bold text-white">Mukul Meena</Link>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              <span className="sr-only">Open main menu</span>
+              {isMobileMenuOpen ? (
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      <motion.div
+        className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: isMobileMenuOpen ? 1 : 0, y: isMobileMenuOpen ? 0 : -50 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </motion.div>
     </nav>
   );
 };

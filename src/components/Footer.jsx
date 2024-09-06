@@ -11,7 +11,10 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className="bg-slate-900 p-4" style={{ cursor: "default" }}>
+    <div
+      className="fixed w-full bg-slate-900 p-4"
+      style={{ cursor: "default", bottom: 0 }}
+    >
       <div className="flex justify-between flex-wrap gap-4">
         <p className="text-white text-center w-full sm:w-auto font-light">
           © {year} Mukul. All rights reserved.
