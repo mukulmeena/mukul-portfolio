@@ -21,11 +21,11 @@ const Navbar = () => {
   }, [pathname]);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/mukul-portfolio' },
+    { name: 'About', path: '/mukul-portfolio/about' },
+    { name: 'Projects', path: '/mukul-portfolio/projects' },
+    { name: 'Experience', path: '/mukul-portfolio/experience' },
+    { name: 'Contact', path: '/mukul-portfolio/contact' },
   ];
 
   return (
