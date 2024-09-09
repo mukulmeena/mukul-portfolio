@@ -12,7 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/mukul-portfolio" element={<Home />} />
+        <Route path="/mukul-portfolio/" element={<Home />} />
         <Route path="/mukul-portfolio/experience" element={<Experience />} />
         <Route path="/mukul-portfolio/projects" element={<Projects />} />
         <Route path="/mukul-portfolio/about" element={<About />} />

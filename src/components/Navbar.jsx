@@ -21,7 +21,7 @@ const Navbar = () => {
   }, [pathname]);
 
   const navItems = [
-    { name: 'Home', path: '/mukul-portfolio' },
+    { name: 'Home', path: '/mukul-portfolio/' },
     { name: 'About', path: '/mukul-portfolio/about' },
     { name: 'Projects', path: '/mukul-portfolio/projects' },
     { name: 'Experience', path: '/mukul-portfolio/experience' },
