@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/mukul-portfolio/static/css/main.5e95a4f5.css",
+    "main.js": "/mukul-portfolio/static/js/main.baee2a95.js",
+    "static/js/592.efa28633.chunk.js": "/mukul-portfolio/static/js/592.efa28633.chunk.js",
+    "static/media/medicine-ui.png": "/mukul-portfolio/static/media/medicine-ui.20c4b03b06205d41a678.png",
+    "static/media/intelli_chatbot.png": "/mukul-portfolio/static/media/intelli_chatbot.1495861b720dd44e92d5.png",
+    "index.html": "/mukul-portfolio/index.html",
+    "main.5e95a4f5.css.map": "/mukul-portfolio/static/css/main.5e95a4f5.css.map",
+    "main.baee2a95.js.map": "/mukul-portfolio/static/js/main.baee2a95.js.map",
+    "592.efa28633.chunk.js.map": "/mukul-portfolio/static/js/592.efa28633.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e95a4f5.css",
+    "static/js/main.baee2a95.js"
+  ]
+}
