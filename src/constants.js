@@ -24,24 +24,24 @@ export const project = [
     image: AAVE,
     title: "AAVE Subgraph",
     description:
-      "sdkjfsdkfshdjshdjshvcjsh,djhsbjshvjshdvjhsdvjhsddkabk.ak.jabkjsbcksdjfskdjhsjhsdjhsdjfsdjsdjhsdjhsdfjsdjhaskjaslkasjlkajlkalkasddlasklasklaskdlaskdlasdlashdasjhda",
-    git: "October 2023 - Present",
+      "Aave is a decentralized non-custodial liquidity protocol where users can participate as depositors or borrowers. This Subgraph Basically query the data of Application on Blockchain and GraphQL Node and store the data in Graph Store.",
+    git: "https://github.com/mukulmeena/Subgraph/tree/AaveV2",
     technologies: ["Typescript", "Web3", "Blockchain", "Defi"],
   },
   {
     image: Medicine_UI,
     title: "Medicine Finder App",
     description:
-      "sdkjfsdkfshdjshdjshvcjsh,djhsbjshvjshdvjhsdvjhsddkabk.ak.jabkjsbcksdjfskdjhsjhsdjhsdjfsdjsdjhsdjhsdfjsdjhaskjaslkasjlkajlkalkasddlasklasklaskdlaskdlasdlashdasjhda",
-    git: "October 2023 - Present",
-    technologies: ["React", "API", "Javascript", "Tailwind"],
+      "Developed a React-based web application for searching and displaying medicine availablity from nearby stores based on various salt information. Implemented complex data manipulation and sorting algorithms to process API responses.",
+    git: "https://github.com/mukulmeena/Medical-Service-UI",
+    technologies: ["React", "API", "Javascript"],
   },
   {
     image: Intelli_chatbot,
     title: "Data Visualization Chatbot",
     description:
-      "sdkjfsdkfshdjshdjshvcjsh,djhsbjshvjshdvjhsdvjhsddkabk.ak.jabkjsbcksdjfskdjhsjhsdjhsdjfsdjsdjhsdjhsdfjsdjhaskjaslkasjlkajlkalkasddlasklasklaskdlaskdlasdlashdasjhda",
-    git: "October 2023 - Present",
+      "An AI-based platform for data analysis, where I took advantage of Pandas' enormous processing power to speed up analysis and Excel Spreadsheets' superior data display capabilities over Jupyter notebooks. This platform uses AI to write code, analyze data, and present the results on a spreadsheet with just one query.",
+    git: "https://github.com/mukulmeena/IntelliChatbot",
     technologies: ["Python", "React", "Flask", "Pandas"],
   },
 ];
@@ -85,9 +85,9 @@ export const experiences = [
   },
 ];
 
-export const EMAIL_JS_SERVICE_ID = "service_90wb9t5";
-export const EMAIL_JS_TEMPLATE_ID = "template_8l87rew";
-export const EMAIL_JS_PUBLIC_KEY = "pHPjc9RGGkF66r86N";
+export const EMAIL_JS_SERVICE_ID = "service_pacm4fl";
+export const EMAIL_JS_TEMPLATE_ID = "template_zxffl44";
+export const EMAIL_JS_PUBLIC_KEY = "mKZB7tIh2zgtfa-X9";
 
 export const skills = [
   "scalable web applications",

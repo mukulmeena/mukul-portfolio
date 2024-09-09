@@ -41,7 +41,9 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
+                    pathname === item.path ? 'bg-gray-700 text-white' : ''
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -79,7 +81,9 @@ const Navbar = () => {
             <Link
               key={item.name}
               to={item.path}
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className={`text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
+                pathname === item.path ? 'bg-gray-700 text-white' : ''
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}

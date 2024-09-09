@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import { services } from "../constants";
 import ButtonLink from "./ButtonLink";
+import { motion } from "framer-motion";
 import Footer from "./Footer";
 
 const ServiceCard = ({ service }) => (
@@ -26,9 +27,10 @@ const ServiceCard = ({ service }) => (
 
 const About = () => {
   return (
-    <div>
+    <motion.div>
       <div
-        className="bg-black h-full w-full text-white sm:flex sm:justify-around about py-12 overflow-x-hidden"
+        className="bg-black w-full text-white sm:flex sm:justify-around about overflow-x-hidden"
+        style={{ padding: "4rem 0" }}
         id="about"
       >
         <div className="flex flex-col justify-around">
@@ -81,7 +83,7 @@ const About = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

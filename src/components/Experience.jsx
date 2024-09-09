@@ -6,9 +6,6 @@ import Footer from "./Footer";
 const Experience = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
       className="experience bg-black w-full text-white pt-20 pb-16 overflow-hidden"
       id="experience"
     >

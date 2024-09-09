@@ -8,7 +8,7 @@ const ProjectCard = ({ image, title, description, git, technologies }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-gray-900 border border-gray-700 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+      className="bg-gray-900 h-full border border-gray-700 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
     >
       <motion.img
         whileHover={{ scale: 1.1 }}
@@ -36,7 +36,7 @@ const ProjectCard = ({ image, title, description, git, technologies }) => {
         </div>
         <motion.a
           whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          // whileTap={{ scale: 0.95 }}
           href={git}
           target="_blank"
           rel="noopener noreferrer"
@@ -65,12 +65,7 @@ const ProjectCard = ({ image, title, description, git, technologies }) => {
 
 const Projects = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="bg-black min-h-screen py-16"
-    >
+    <motion.div className="bg-black min-h-screen py-16">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ y: -50, opacity: 0 }}
@@ -93,6 +88,7 @@ const Projects = () => {
                 image={item.image}
                 title={item.title}
                 description={
+                  item?.description ||
                   "An innovative project showcasing cutting-edge technology and problem-solving skills."
                 }
                 git={item.git}

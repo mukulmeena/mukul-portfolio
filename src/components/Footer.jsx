@@ -1,10 +1,6 @@
 import React from "react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
-import {
-  AiFillMediumCircle,
-  AiFillLinkedin,
-  AiFillGitlab,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGitlab } from "react-icons/ai";
 import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
@@ -12,7 +8,7 @@ const Footer = () => {
 
   return (
     <div
-      className="fixed w-full bg-slate-900 p-4"
+      className={`fixed w-full bg-slate-900 p-4`}
       style={{ cursor: "default", bottom: 0 }}
     >
       <div className="flex justify-between flex-wrap gap-4">
@@ -32,6 +28,7 @@ const Footer = () => {
             target="_blank"
             className="transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1"
             style={{ cursor: "pointer" }}
+            rel="noreferrer"
           >
             <FaTwitter className="text-xl" />
           </a>
@@ -40,6 +37,7 @@ const Footer = () => {
             target="_blank"
             className="transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1"
             style={{ cursor: "pointer" }}
+            rel="noreferrer"
           >
             <AiFillLinkedin className="text-xl" />
           </a>
@@ -48,6 +46,7 @@ const Footer = () => {
             target="_blank"
             className="transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1"
             style={{ cursor: "pointer" }}
+            rel="noreferrer"
           >
             <FaGithub className="text-xl" />
           </a>
@@ -56,6 +55,7 @@ const Footer = () => {
             target="_blank"
             className="transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1"
             style={{ cursor: "pointer" }}
+            rel="noreferrer"
           >
             <AiFillGitlab className="text-xl" />
           </a>
