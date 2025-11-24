@@ -39,19 +39,11 @@ const About = () => {
               Introduction
             </h2>
             <p className="mt-3 mb-6 text-[17px] max-w-3xl leading-[30px]">
-              👨‍💻 I am Mukul Meena, a strong professional with a Bachelor of
-              Technology (Electronics and Communication). Experienced{" "}
-              <a
-                className="text-green-300 hover:text-green-500 duration-300"
-                href="https://www.linkedin.com/in/mukul-meena-750568239/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Software developer
-              </a>{" "}
-              with 2+ Year Expertise in Python, ReactJS, Node.js, GCP, MongoDB,
-              and Auth0. Proficient in Flask for seamless application
-              development.🚀.
+              👨‍💻 Innovative Software Engineer with nearly 3 years of
+              comprehensive experience in full-stack development aligned with
+              best SLDC practices, cloud architecture, and automation solutions,
+              specializing in building scalable, AI-driven SaaS products using
+              ReactJS, NodeJS, Python (Flask), & GCP 🚀.
               <br />
               {/* Extra curricular*/}
               {/* ✍️ Beyond coding, I love sharing my insights and experiences
@@ -70,7 +62,7 @@ const About = () => {
             </p>
 
             <ButtonLink
-              url="https://drive.google.com/file/d/1u0ZfEMK6SNiEzoptAbrA-tmG8zbSv3PE/view?usp=sharing"
+              url="https://drive.google.com/file/d/1u0ZfEMK6SNiEzoptAbrA-tmG8zbSv3PE/view?usp=drive_link"
               text="View Resume →"
               padding={`p-3`}
             />
