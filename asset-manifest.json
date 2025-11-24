@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/mukul-portfolio/static/css/main.465f0bd3.css",
-    "main.js": "/mukul-portfolio/static/js/main.3bcb7721.js",
+    "main.css": "/mukul-portfolio/static/css/main.f95846dc.css",
+    "main.js": "/mukul-portfolio/static/js/main.6f468e48.js",
     "static/media/medicine-ui.png": "/mukul-portfolio/static/media/medicine-ui.20c4b03b06205d41a678.png",
     "static/media/intelli_chatbot.png": "/mukul-portfolio/static/media/intelli_chatbot.1495861b720dd44e92d5.png",
+    "static/media/trading-bot.jpg": "/mukul-portfolio/static/media/trading-bot.aae39b40039721f955ac.jpg",
     "index.html": "/mukul-portfolio/index.html",
-    "main.465f0bd3.css.map": "/mukul-portfolio/static/css/main.465f0bd3.css.map",
-    "main.3bcb7721.js.map": "/mukul-portfolio/static/js/main.3bcb7721.js.map"
+    "main.f95846dc.css.map": "/mukul-portfolio/static/css/main.f95846dc.css.map",
+    "main.6f468e48.js.map": "/mukul-portfolio/static/js/main.6f468e48.js.map"
   },
   "entrypoints": [
-    "static/css/main.465f0bd3.css",
-    "static/js/main.3bcb7721.js"
+    "static/css/main.f95846dc.css",
+    "static/js/main.6f468e48.js"
   ]
 }
