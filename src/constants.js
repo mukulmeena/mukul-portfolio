@@ -2,6 +2,7 @@ import Quantinent from "./assets/Quantinent.png";
 import AAVE from "./assets/aave.jpg";
 import Medicine_UI from "./assets/medicine-ui.png";
 import Intelli_chatbot from "./assets/intelli_chatbot.png";
+import trading_bot from "./assets/trading-bot.jpg";
 
 export const services = [
   {
@@ -35,6 +36,21 @@ export const project = [
       "Developed a React-based web application for searching and displaying medicine availablity from nearby stores based on various salt information. Implemented complex data manipulation and sorting algorithms to process API responses.",
     git: "https://github.com/mukulmeena/Medical-Service-UI",
     technologies: ["React", "API", "Javascript"],
+  },
+  {
+    image: trading_bot,
+    title: "Automated Trading Bot for crypto",
+    description:
+      "Developed a Python implementation of the PineScript strategy that runs in real-time using 5-minute candlestick data from Lighter API.",
+    git: "https://github.com/mukulmeena/trading-strategy-bot/tree/strategy-python",
+    technologies: [
+      "Python",
+      "Blockchain",
+      "Lighter",
+      "GCP",
+      "Railway",
+      "Flask",
+    ],
   },
   {
     image: Intelli_chatbot,
